@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .ab {
+          margin: auto;
+          width: 60%;
+          border: 3px solid #bcc7ae;
+          background-color: beige;
+          padding: 10px;
+          margin-top: 5%;
+          font-size: 15px;
+        }
+        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <title>Palindrome String </title>
+</head>
+<body>
+  
+    <div class="ab">
+        <h2> Palindrome String </h2>
+     <pre>
+       
+        <b>
+        Given a string S, check if it is palindrome or not. 
+
+        Example 1:
+
+        Input: S = "abba"
+        Output: 1
+        Explanation: S is a palindrome.
+
+        Example 2:
+
+        Input: S = "abc" 
+        Output: 0
+        Explanation: S is not a palindrome
+        </b>
+        <hr>
+        <b>Code</b>
+               
+        int isPlaindrome(string s)
+	    {
+	     
+	    int i=0,j=s.size()-1;
+	    while(i&lt;j)
+	    {
+	        if(s[i]!=s[j])
+	         {
+	             return 0;
+	         }
+	         i++;
+	         j--;
+	    
+	     }
+	     return 1;
+	    }
+        
+         
+      </pre>
+    </div>
+    
+
+    </div>
+</body>
+</html>
+  

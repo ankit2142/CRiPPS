@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .ab {
+          margin: auto;
+          width: 60%;
+          border: 3px solid #bcc7ae;
+          background-color: beige;
+          padding: 10px;
+          margin-top: 5%;
+          font-size: 15px;
+        }
+        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <title>intersection of two linked list   </title>
+</head>
+<body>
+  
+    <div class="ab">
+        <h2>intersection of two linked list   </h2>
+     <pre>
+       
+        <b>
+        Given two lists sorted in increasing order, create a new list representing the intersection of the 
+        two lists. The new list should be made with its own memory — the original lists should not be changed.
+
+        Example 1:
+
+         
+        Input:
+        L1 = 1->2->3->4->6
+        L2 = 2->4->6->8
+        Output: 2 4 6
+        Explanation: For the given first two linked list, 2, 4 and 6 are the elements in the intersection
+         
+        
+        Example 2:
+
+        Input:
+        L1 = 10->20->40->50
+        L2 = 15->40
+        Output: 40
+
+        </b>
+        <hr>
+        <b>Code</b>
+        
+       
+    Node* findIntersection(Node* head1, Node* head2)
+    {
+     Node* head=NULL;
+     Node* p1=head1;
+     Node* p2=head2;
+     Node* curr=NULL;
+     while(p1&&p2)
+      {
+         if(p1->data==p2->data)
+         {
+             if(head==NULL)
+             {
+                 Node* temp=new Node(p1->data);
+                 head=temp;
+                 curr=temp;
+             }
+             else
+             {
+                 Node* temp=new Node(p1->data);
+                 
+                 curr->next=temp;
+                 curr=curr->next;
+             }
+             p1=p1->next;
+             p2=p2->next;
+         }
+         else
+         {
+             if(p1->data>p2->data)
+              p2=p2->next;
+              else
+              p1=p1->next;
+         }
+      }
+     return head;
+     
+    }
+
+  
+        
+       
+         
+      </pre>
+    </div>
+    
+
+    </div>
+</body>
+</html>
+  

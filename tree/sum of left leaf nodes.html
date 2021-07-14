@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .ab {
+          margin: auto;
+          width: 60%;
+          border: 3px solid #bcc7ae;
+          background-color: beige;
+          padding: 10px;
+          margin-top: 5%;
+          font-size: 15px;
+        }
+        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <title>Sum of Left Leaf Nodes    </title>
+</head>
+<body>
+  
+    <div class="ab">
+        <h2>Sum of Left Leaf Nodes   </h2>
+     <pre>
+       
+        <b>
+        Given a Binary Tree of size N. Find the sum of all the leaf nodes that are left child of their parent 
+        of the given binary tree.
+
+
+        Example 1:
+
+        Input:
+             1
+           /   \
+          2     3
+        Output: 2
+
+        Example 2:
+
+        Input:
+               1
+             /  \
+            2    3
+           /  \    \
+          4    5     8 
+         /  \       /  \
+        7    2      6    9
+        Output: 13
+        Explanation:
+        sum = 6 + 7 = 13
+
+        </b>
+        <hr>
+        <b>Code</b>
+        
+        int leftLeavesSum(Node *root)
+        {
+           if(root==NULL)
+            return 0;
+     
+           if((root->left)&&(root->left->left==0)&&(root->left->right==0))
+             return root->left->data+leftLeavesSum(root->right);
+      
+            return leftLeavesSum(root->left)+leftLeavesSum(root->right);
+        }
+        
+        
+  
+        
+       
+         
+      </pre>
+    </div>
+    
+
+    </div>
+</body>
+</html>
+  

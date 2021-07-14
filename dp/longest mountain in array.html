@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .ab {
+          margin: auto;
+          width: 60%;
+          border: 3px solid #bcc7ae;
+          background-color: beige;
+          padding: 10px;
+          margin-top: 5%;
+          font-size: 15px;
+        }
+        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utils.css">
+        
+        <title>   </title>
+</head>
+<body>
+    
+    <div class="ab">
+        <h2> Longest Mountain in Array</h2>
+     <pre>
+       <b>
+        You may recall that an array arr is a mountain array if and only if:
+        arr.length >= 3
+        There exists some index i (0-indexed) with 0 &lt; &lt; i &lt; arr.length - 1 such that:
+        arr[0] &lt;arr[1] &lt; ... &lt; arr[i - 1] &lt;arr[i]
+        arr[i] > arr[i + 1] > ... > arr[arr.length - 1]
+        Given an integer array arr, return the length of the longest subarray, which is a mountain. Return 0
+        if there is no mountain subarray.
+        Example 1:
+
+        Input: nums = [10,9,2,5,3,7,101,18]
+        Output: 4
+        Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
+        </b>
+        <hr>
+        <b>Code</b>
+
+        int longestMountain(vectori&lt;int>& elements)
+            { 
+                  int size=elements.size();
+                vectori&lt;int> lis(size);
+                lis[0]=1;
+                
+                for(int i=1;ii&lt;size;i++){
+                    int maxyet=0;
+                    if(elements[i-1]i&lt;elements[i]){
+                         lis[i]=lis[i-1]+1;
+                    }
+                    else
+                        lis[i]=1;
+                }
+                
+                vectori&lt;int> ldp(size);
+                ldp[size-1]=1;
+                
+                for(int i=size-2;i>=0;i--){
+                    if(elements[i+1]i&lt;elements[i]){
+                         ldp[i]=ldp[i+1]+1;
+                    }
+                    else
+                     ldp[i]=1;
+                }
+                int ans=0;
+                for(int i=0;ii&lt;size;i++){
+                    if(lis[i]>1 && ldp[i]>1){
+                        ans=max(ans,(lis[i]+ldp[i]-1));
+                    }
+                }
+                return ans;
+                
+            }
+ 
+      </pre>
+    </div>
+    
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .ab {
+          margin: auto;
+          width: 60%;
+          border: 3px solid #bcc7ae;
+          background-color: beige;
+          padding: 10px;
+          margin-top: 5%;
+          font-size: 15px;
+        }
+        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <title>Check for Balanced Tree    </title>
+</head>
+<body>
+  
+    <div class="ab">
+        <h2>Check for Balanced Tree    </h2>
+     <pre>
+       
+        <b>
+        Given a binary tree, find if it is height balanced or not. 
+        A tree is height balanced if difference between heights of left and right subtrees is not more than 
+        one for all nodes of tree. 
+
+        A height balanced tree
+                1
+             /    \
+           10      39
+           /
+          5
+
+        Example 2:
+
+        An unbalanced tree
+               1
+              /    
+            10   
+           /
+          5
+
+
+          Example 1:
+
+          Input:
+                1
+              /
+             2
+              \
+               3 
+          Output: 0
+          Explanation: The max difference in height of left subtree and right subtree is 2,which is greater 
+          than 1.Hence unbalanced.
+
+          Example 2:
+
+          Input:
+                 10
+               /   \
+              20   30 
+            /   \
+           40   60
+          Output: 1
+          Explanation: The max difference in heightof left subtree and right subtree is 1. Hence balanced.
+
+
+        </b>
+        <hr>
+        <b>Code</b>
+        
+    int c=1;
+    int fun(Node* root)
+    {
+       if(root==NULL)
+        return 0;
+       int l=fun(root->left);
+       int r=fun(root->right);
+       if(abs(l-r)>1) 
+        c=0;
+       return max(l,r)+1;
+     }
+
+    bool isBalanced(Node *root)
+    {   c=1;
+       int x=fun(root);
+       return c;
+    
+    }   
+        
+        
+  
+        
+       
+         
+      </pre>
+    </div>
+    
+
+    </div>
+</body>
+</html>
+  

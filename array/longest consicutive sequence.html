@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .ab {
+          margin: auto;
+          width: 70%;
+          border: 3px solid #bcc7ae;
+          background-color: beige;
+          padding: 10px;
+          margin-top: 5%;
+          font-size: 15px;
+        }
+        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <title>Longest Consecutive Sequence   </title>
+</head>
+<body>
+  
+    <div class="ab">
+        <h2>Longest Consecutive Sequence     </h2>
+     <pre>
+       
+    <b>
+Given an unsorted array of integers nums, return the length of the longest consecutive elements 
+sequence.You must write an algorithm that runs in O(n) time. 
+
+Example 1:
+
+Input: nums = [100,4,200,1,3,2]
+Output: 4
+Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
+
+Example 2:
+
+Input: nums = [0,3,7,2,5,8,4,6,0,1]
+Output: 9
+      
+      
+      
+
+</b>        
+<hr>
+    
+<b>Code</b>
+ 
+int longestConsecutive(vector&lt;int>& a) 
+{
+int i,j;
+int n=a.size();
+if(n==0)
+ return 0;
+unordered_map&lt;int,int>m;
+for(i=0;i&lt;n;i++)
+m[a[i]]++;
+int mx=INT_MIN,count=0;
+for(i=0;i&lt;n;i++)
+{   count=0;
+    if(m.find(a[i]-1)==m.end())
+    {  int num=a[i];
+       count=0;
+       while(m.find(num)!=m.end())
+       {   num++;
+           count++;
+       }
+    }
+    mx=max(mx,count);
+}
+return mx;
+}      
+        
+       
+         
+      </pre>
+    </div>
+    
+
+    </div>
+</body>
+</html>
+  

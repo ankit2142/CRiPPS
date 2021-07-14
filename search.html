@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create a column layout with Flexbox */
+.row {
+  display: flex;
+}
+
+/* Left column (menu) */
+.left {
+  flex: 35%;
+  padding: 15px 0;
+}
+
+.left h2 {
+  padding-left: 8px;
+}
+
+/* Right column (page content) */
+.right {
+  flex: 65%;
+  padding: 15px;
+}
+
+/* Style the search box */
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+/* Style the navigation menu inside the left column */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+
+#myMenu li a:hover {
+  background-color: #eee;
+}
+</style>
+<link rel="stylesheet" href="css/utils.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/mobile.css">
+<title>Search</title>
+</head>
+<body>
+  
+ <nav class="navigation max-width-1 m-auto">
+  <div class="nav-left">
+    <a href="/">
+        <span><img src="img/logo2.png" width="94px" alt=""></span>
+    </a>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://www.linkedin.com/in/ankit-aakodiya-b106371a0/">About</a></li>
+        <li><a href="https://www.linkedin.com/in/ankit-aakodiya-b106371a0/">Contact</a></li>
+    </ul>
+  </div>
+  
+ </nav>
+ 
+ 
+ 
+
+<div class="row">
+  <div class="left" style="background-color:#bbb;">
+    <h2>Search Menu</h2>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+       <li> <a href="array.html">Array</a></li>
+       <li> <a href="array/minimum platform.html">Minimum Platform</a></li>
+       <li> <a href="array/longest consicutive sequence.html">Longest consicutive sequence</a></li>
+       <li> <a href="string.html">String</a></li>
+       <li> <a href="string/count the number of substrings that start and end with 1.html">Count the number of substrings that start and end with 1</a></li>
+       <li> <a href="string/palindrome string.html">Palindrome String</a></li>
+       <li> <a href="string/smallest distinct window.html">Smallest distinct window</a></li>
+       <li> <a href="string/longest substring without repeating characters..html">Longest substring without repeating characters</a></li>
+       <li> <a href="stack.html">String</a></li>
+       <li> <a href="stack/next greater element .html">Next Greater Element</a></li>
+       <li> <a href="stack/the celebrity problem.html">The Celebrity Problem</a></li>
+       <li> <a href="linked list.html">Linked List</a></li>
+       <li> <a href="linked list/check if circular linked list.html">Check If Circular Linked List</a></li>
+       <li> <a href="linked list/delete middle of linked list.html">Delete Middle of Linked List</a></li>
+       <li> <a href="linked list/intersection of two linked list.html">intersection of two linked list </a></li>
+       <li> <a href="linked list/reverse a linked list.html"> Reverse a linked list</a></li>
+       <li> <a href="tree.html">Tree</a></li>
+       <li> <a href="tree/check for balanced tree.html">Check for Balanced Treet</a></li>
+       <li> <a href="tree/height of binary tree.html">Height of Binary Tree </a></li>
+       <li> <a href="tree/lowest common ancestor in bst.html">Lowest Common Ancestor in a BST</a></li>
+       <li> <a href="tree/sum of left leaf nodes.html">Sum of Left Leaf Nodes</a></li>
+       <li> <a href="graph.html">Graph</a></li>
+       <li> <a href="graph/find the number of islands.html">Find the number of islands</a></li>
+       <li> <a href="graph/rotton oranges.html">Rotten Oranges</a></li>
+       <li> <a href="dp.html">Dynamic programming</a></li>
+       <li> <a href="dp/01 knapsack.html">0-1 Knapsack</a></li>
+       <li> <a href="dp/longest common subsequence.html">Longest Common Subsequence</a></li>
+       <li> <a href="dp/longest increasing subsequence.html">Longest Increasing Subsequence</a></li>
+       <li> <a href="dp/longest mountain in array.html">Longest Mountain in Array</a></li>
+       <li> <a href="sorting.html">Sorting</a></li>
+       <li> <a href="sorting/bubble sort.html"> Bubble Sort</a></li>
+       <li> <a href="sorting/heap sort.html">Heap Sort</a></li>
+       <li> <a href="sorting/merge sort.html">Merge Sort</a></li>
+       <li> <a href="sorting/quick sort.html">Quick Sort</a></li>
+
+
+        
+       
+    </ul>
+  </div>
+  
+   
+</div>
+
+<script>
+function myFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</body>
+</html>

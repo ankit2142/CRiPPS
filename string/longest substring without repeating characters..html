@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .ab {
+          margin: auto;
+          width: 60%;
+          border: 3px solid #bcc7ae;
+          background-color: beige;
+          padding: 10px;
+          margin-top: 5%;
+          font-size: 15px;
+        }
+        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <title>Longest substring without repeating characters</title>
+</head>
+<body>
+  
+    <div class="ab">
+        <h2>Longest substring without repeating characters </h2>
+     <pre>
+       
+        <b>
+        Given a string S, find the length of the longest substring without repeating characters.
+
+        Example 1:
+
+        Input:
+        S = "geeksforgeeks"
+        Output:
+        7
+        Explanation:
+        Longest substring is "eksforg".
+
+        </b>
+        <hr>
+        <b>Code</b>
+        
+#include&lt;bits/stdc++.h&gt; 
+using namespace std;
+int main()
+ {
+    int i,j,k,n;
+    string s;
+    cin>>s;
+    n=s.size();
+    unordered_map&lt;int,int>m;
+    int mx=INT_MIN;
+    i=0,j=0;
+    while(j&lt;n)
+    {
+        m[s[j]]++;
+        if(m.size()==j-i+1)
+        {
+            mx=max(mx,j-i+1);
+            j++;
+        }
+        else if(m.size()&lt;j-i+1)
+        {
+            while(m.size()&lt;j-i+1)
+            {
+                m[s[i]]--;
+    
+                if(m[s[i]]==0)
+                 m.erase(s[i]);
+                 i++;
+            }
+            j++;
+        }
+    }
+    cout&lt;&lt;mx&lt;&lt;endl;
+	    
+	 
+	return 0;
+}
+        
+         
+      </pre>
+    </div>
+    
+
+    </div>
+</body>
+</html>
+  

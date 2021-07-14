@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .ab {
+          margin: auto;
+          width: 60%;
+          border: 3px solid #bcc7ae;
+          background-color: beige;
+          padding: 10px;
+          margin-top: 5%;
+          font-size: 15px;
+        }
+        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <title>Smallest distinct window</title>
+</head>
+<body>
+  
+    <div class="ab">
+        <h2> Smallest distinct window </h2>
+     <pre>
+       
+        <b>
+        Given a string 's'. The task is to find the smallest window length that contains all the characters 
+        of the given string at least one time.For eg. A = “aabcbcdbca”, then the result would be 4 as of the 
+        smallest window will be “dbca”.
+
+        Example 1:
+
+        Input : "AABBBCBBAC"
+        Output : 3
+        Explanation : Sub-string -> "BAC" 
+
+        Example 2:
+
+        Input : "aaab"
+        Output : 2
+        Explanation : Sub-string -> "ab"
+
+        </b>
+        <hr>
+        <b>Code</b>
+#include&lt;bits/stdc++.h&gt; 
+using namespace std;
+int main()
+ {
+	    string s;
+	    int i,j,n,k,mn=INT_MAX;
+	    cin>>s;
+	    n=s.size();
+	    
+	    unordered_map&lt;char,int>m,m1;
+	    for(i=0;i&lt;n;i++)
+	    {
+	        m1[s[i]]++;
+	    }
+	    k=m1.size();
+	    i=0,j=0;
+	    while(j&lt;n)
+	    {
+	        m[s[j]]++;
+	        if(m.size()&lt;k)
+	         j++;
+	        else if(m.size()==k)
+	        {
+	            mn=min(mn,j-i+1);
+	             while(m.size()==k)
+	            {    mn=min(mn,j-i+1);
+	                m[s[i]]--;
+	                if(m[s[i]]==0)
+	                 m.erase(s[i]);
+	                i++;
+	            }
+	            j++;
+	        }
+	        
+	    }
+	    cout&lt;&lt;mn&lt;&lt;endl;
+	    
+	 
+	return 0;
+}
+        
+         
+      </pre>
+    </div>
+    
+
+    </div>
+</body>
+</html>
+  
