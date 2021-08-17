@@ -43,42 +43,49 @@
  <br>       
 <hr>
     <pre>
-        <b>Code</b>
+  <b>Code</b>
 
-        int longestMountain(vectori&lt;int>& elements)
-            { 
-                  int size=elements.size();
-                vectori&lt;int> lis(size);
-                lis[0]=1;
+  int longestMountain(vectori&lt;int>& elements)
+   { 
+     int size=elements.size();
+     vectori&lt;int> lis(size);
+     lis[0]=1;
                 
-                for(int i=1;ii&lt;size;i++){
-                    int maxyet=0;
-                    if(elements[i-1]i&lt;elements[i]){
-                         lis[i]=lis[i-1]+1;
-                    }
-                    else
-                        lis[i]=1;
-                }
+     for(int i=1;ii&lt;size;i++)
+     {
+     int maxyet=0;
+     if(elements[i-1]i&lt;elements[i])
+     {
+       lis[i]=lis[i-1]+1;
+     }
+     else
+     {
+          lis[i]=1;
+       }
                 
-                vectori&lt;int> ldp(size);
-                ldp[size-1]=1;
+       vectori&lt;int> ldp(size);
+       ldp[size-1]=1;
                 
-                for(int i=size-2;i>=0;i--){
-                    if(elements[i+1]i&lt;elements[i]){
-                         ldp[i]=ldp[i+1]+1;
-                    }
+      for(int i=size-2;i>=0;i--)
+      {
+           if(elements[i+1]i&lt;elements[i])
+           {
+                  ldp[i]=ldp[i+1]+1;
+            }
                     else
                      ldp[i]=1;
-                }
-                int ans=0;
-                for(int i=0;ii&lt;size;i++){
-                    if(lis[i]>1 && ldp[i]>1){
-                        ans=max(ans,(lis[i]+ldp[i]-1));
-                    }
-                }
-                return ans;
+       }
+         int ans=0;
+         for(int i=0;ii&lt;size;i++)
+         {
+           if(lis[i]>1 && ldp[i]>1)
+           {
+             ans=max(ans,(lis[i]+ldp[i]-1));
+           }
+        }
+  return ans;
                 
-            }
+  }
  
       </pre>
     </div>
